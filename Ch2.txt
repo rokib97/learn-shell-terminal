@@ -1,0 +1,170 @@
+1. filesystem
+
+    A filesystem is the way a computer organizes and manages data into a structured hierarchy of directories (folders) and files. Here's a brief summary:
+
+    Directories are containers that can hold files or other directories, forming a tree-like structure.
+    Files store raw binary data, which can represent various types of content like text, images, or videos.
+    The root directory is the starting point of the filesystem tree.
+    The current working directory is the location in the filesystem where you are currently operating, commonly starting as your "home" directory in a terminal.
+
+    example : 
+    pwd - print working directory
+    output : /Users/rokib
+
+2. Filepaths
+
+    Filepaths Explained:
+    A filepath describes the location of a file or directory in the filesystem.
+    The root directory (/) is the starting point of the filesystem.
+    Example: /Users/rokib means:
+    / = root directory.
+    Users = a directory in the root.
+    wagslane = a directory inside Users.
+
+    Commands:
+    ls: Lists the contents of the current working directory.
+    cd [directory_name]: Changes the working directory to the specified directory. For example, cd rokib moves into the worldbanc directory.
+
+3. Parent Directories
+
+    Parent Directory:
+    .. is an alias for the parent directory of your current location.
+    It allows you to move up one level in the directory tree.
+
+    Commands:
+    cd ..: Moves to the parent directory of the current directory.
+    ls [directory_name]: Lists the contents of a specified directory from the current location, 
+
+4. Absolute vs. Relative Paths
+
+    Relative Paths:
+    Paths based on your current directory.
+    Change depending on where you are in the filesystem.
+    Example (from different starting points):
+    Inside vehicles: cars/fords/mustang.txt
+    Inside cars: fords/mustang.txt
+    Inside fords: mustang.txt
+    
+    Absolute Paths:
+    Start from the root directory (/) and are fixed, regardless of your current location.
+    Always provide the full path to a file or directory.
+    Example: /vehicles/cars/fords/mustang.txt
+
+    Key Difference:
+    Absolute paths always start with / and are consistent.
+    Relative paths depend on your current working directory.
+
+5. Files
+
+    Files:
+    Files are raw blobs of data stored on a filesystem.
+    The data can represent anything: text, images, videos, etc.
+
+    cat Command:
+    Purpose: View the contents of a file or concatenate multiple files.
+    Examples:
+    View a single file: cat file1.txt
+    View multiple files: cat file1.txt file2.txt
+
+    Commands Overview:
+    cd [directory_name]: Navigate to a directory.
+    ls: List the contents of a directory.
+    cat [file_name]: Display the contents of a file. For example, cat pr_ideas.txt shows the contents of the file.
+
+6.head and tail
+
+    Purpose:
+    These commands allow you to view specific parts of a file without printing the entire content.
+
+    head Command:
+    Prints the first n lines of a file.
+    Example: head -n 10 file1.txt prints the first 10 lines.
+    Defaults to 10 lines if -n is not specified.
+
+    tail Command:
+    Prints the last n lines of a file.
+    Example: tail -n 5 file1.txt prints the last 5 lines.
+    Defaults to 10 lines if -n is not specified.
+
+    Directory Navigation:
+    Use cd [directory_name] to move into a directory.
+    Use cd .. to move to the parent directory.
+    Combine moves: cd ../.. goes up two levels.
+
+    Example Use Case:
+    View a file (2023.csv) that is too large to print entirely:
+    Use head -n 6 to get the header and first 5 transactions.
+    Use tail -n 5 to get the last 5 lines.
+
+7.More and Less
+
+    Purpose:
+    Both more and less allow you to view the contents of a file, one page (or line) at a time.
+    less is preferred because it offers more features than more, including backward navigation.
+
+    Usage:
+    less [file_name]: View a file interactively, allowing scrolling through the file with the spacebar and 
+    navigation commands.
+    less -N [file_name]: View a file with line numbers displayed.
+    Press q to exit the less viewer and return to the shell prompt.
+
+    Navigation:
+    Use the spacebar to scroll down a page.
+    Press b to scroll up.
+    Use enter to scroll down one line at a time.
+
+    Example Use Case:
+    Run less 2023.csv to view the contents of the 2023.csv file.
+    Use less -N 2023.csv to see line numbers, then navigate to line 153 and copy its contents.
+
+
+8.Touch
+
+    Purpose:
+    Updates the access and modification timestamps of a file.
+    Creates an empty file if the specified file does not already exist.
+
+    Usage:
+    Create a single file: touch new_file.txt
+    Create multiple files: touch file1.txt file2.txt
+
+    Benefits:
+    Ensures a file exists without altering it if it already exists.
+    Useful in scripts to prepare required files.
+
+    Directory Navigation and Verification:
+    Use cd to navigate to the desired directory (e.g., worldbanc/public/products/credit_cards).
+    Use touch credithistory.txt to create a file.
+    Use ls to verify that the file exists.
+
+
+9.Directories and the mkdir Command
+    Directories:
+    A directory (or "folder") is a location in the filesystem that contains files or other directories.
+
+    mkdir Command:
+    Purpose: Creates a new directory within the current directory.
+    Example: mkdir my_directory creates a directory named my_directory.
+
+    Directory Navigation:
+    Use cd to move into the desired directory.
+    Use ls to list the contents of a directory and verify its contents.
+
+
+
+10. mv Command (Move Files and Directories)
+
+    Purpose:
+    Move files or directories to a new location.
+    Rename files or directories.
+
+    Usage:
+    Rename a file: mv old_name.txt new_name.txt
+    Move a file to a subdirectory: mv file.txt subdirectory/
+    Move a file to the parent directory: mv file.txt ../file.txt
+    Move a file while keeping its name: mv file.txt target_directory/
+
+    Steps to Move a File:
+    Specify the source path and destination path.
+    Use pwd to confirm your current directory.
+    Use ls to verify the file's existence before and after the move.
