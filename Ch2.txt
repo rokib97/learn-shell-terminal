@@ -221,8 +221,8 @@
 
 
 13:Home Directory and ~ Alias
-    Home Directory:
 
+    Home Directory:
     The home directory is the starting point for a user when they log in.
     It stores personal files and is the recommended location for development work.
     Example path on Unix-like systems:
@@ -238,3 +238,34 @@
     Caution:
     Avoid working in critical system directories like /bin, /etc, or /var unless necessary.
     Modifications in these directories can disrupt your system's functionality.
+
+
+14:Searching with grep
+
+    Basic grep Usage:
+    The grep command searches for specific text in files and prints matching lines.
+    Example:
+    grep "hello" words.txt
+    Searches for the word "hello" in words.txt. The search is case-sensitive.
+
+    Searching Multiple Files:
+    You can specify multiple files in a single grep command.
+    Example:
+    grep "hello" file1.txt file2.txt
+    Searches for "hello" in both files.
+
+    Recursive Search:
+    Use -r to search within a directory and all its subdirectories.
+    Example:
+    grep -r "hello" .
+    The . refers to the current directory.
+
+    Practical Use Case:
+    Search for "CRITICAL" (all caps) in a specific log file:
+    grep "CRITICAL" worldbanc/private/logs/2024-01-10.log
+    Search for "CRITICAL" across all logs in a directory:
+    grep -r "CRITICAL" worldbanc/private/logs/
+
+    Tips:
+    Use tab completion to save time when typing file or directory names.
+    grep outputs the lines containing the match, making it useful for log analysis or debugging.
