@@ -168,3 +168,25 @@
     Specify the source path and destination path.
     Use pwd to confirm your current directory.
     Use ls to verify the file's existence before and after the move.
+
+
+11. rm Command (Remove Files and Directories)
+
+    Purpose:
+    Delete files or directories from the filesystem.
+
+    Usage:
+    Remove a file: rm file.txt
+    Remove a directory and its contents recursively: rm -r directory_name
+
+    Steps to Remove:
+    Use cd to navigate to the directory containing the file or directory to be removed.
+    Use rm to delete the file or directory.
+    Optionally, use ls to verify that the file or directory has been removed.
+
+    Example Use Case:
+    Navigate to worldbanc/private/.
+    Identify and confirm the presence of sensitive information in passwords/passwords.txt using cat.
+    Remove the passwords.txt file and its parent directory:
+    Command: rm -r passwords/
+    Verify removal by listing the contents of the private directory with ls.
