@@ -190,3 +190,30 @@
     Remove the passwords.txt file and its parent directory:
     Command: rm -r passwords/
     Verify removal by listing the contents of the private directory with ls.
+
+    difference between rm -rf and rm -r when used on a file or directory:
+    rm -r: Deletes recursively, may prompt for confirmation or fail on protected files.
+    rm -rf: Deletes recursively and forcefully, without prompts, and suppresses errors.
+
+
+
+12:cp Command (Copy Files and Directories)
+
+    Purpose:
+    Copies files or directories to a specified location.
+
+    Usage:
+    Copy a file: cp source_file.txt destination/
+    Copy a directory and its contents recursively: cp -R source_directory/ destination_directory/
+
+    Steps to Copy:
+    Use cd to navigate to the directory containing the file or directory to be copied.
+    Use cp to copy the file or directory to the desired location.
+    Optionally, use ls to verify that the file or directory has been successfully copied.
+
+    Example Use Case:
+    Navigate to worldbanc/private/transactions/.
+    Identify the missing file in the backups/ subdirectory.
+    Copy the missing file into backups/:
+    Command: cp missing_file.csv backups/
+    Verify the contents of the backups/ directory using ls.
