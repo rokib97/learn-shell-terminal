@@ -269,3 +269,34 @@
     Tips:
     Use tab completion to save time when typing file or directory names.
     grep outputs the lines containing the match, making it useful for log analysis or debugging.
+
+
+15:Using the find Command
+
+    Finding Files by Exact Name:
+    The find command can locate a file with a specific name in a given directory.
+    Example:
+    find some_directory -name hello.txt
+    Searches for a file named hello.txt in some_directory.
+    
+    Finding Files by Pattern:
+    Use wildcards like * to match parts of filenames.
+    Examples:
+    find some_directory -name "*.txt"       # Finds all `.txt` files.
+    find some_directory -name "*chad*"     # Finds files with "chad" in their name.
+
+
+    Case Sensitivity:
+    The -name flag is case-sensitive by default. To ignore case, use -iname:
+    find some_directory -iname "*joint*"
+
+    Practical Use Case:
+    To find files with "joint" in their names in the worldbanc/public/products directory:
+    find worldbanc/public/products -name "*joint*"
+    Output:
+    The find command lists paths to all matching files or directories, relative to the starting directory.
+
+
+
+
+
