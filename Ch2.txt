@@ -217,3 +217,24 @@
     Copy the missing file into backups/:
     Command: cp missing_file.csv backups/
     Verify the contents of the backups/ directory using ls.
+
+
+
+13:Home Directory and ~ Alias
+    Home Directory:
+
+    The home directory is the starting point for a user when they log in.
+    It stores personal files and is the recommended location for development work.
+    Example path on Unix-like systems:
+    macOS: /Users/username
+    Linux: /home/username
+
+    Using the ~ Alias:
+    The ~ character is a shortcut for the home directory.
+    Instead of typing the full path, you can use:
+    cd ~ to navigate to the home directory.
+
+    Example: ~/workspace refers to the workspace directory in the home folder.
+    Caution:
+    Avoid working in critical system directories like /bin, /etc, or /var unless necessary.
+    Modifications in these directories can disrupt your system's functionality.
