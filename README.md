@@ -1,7 +1,3 @@
-Here's the updated version of your README without the "Future Chapters" section:
-
----
-
 # Learn Shell and Terminal
 
 This repository contains notes, exercises, and resources for learning Shell and Terminal commands. It is designed to help you master the command-line interface (CLI) for various tasks, from basic file navigation to advanced shell scripting.
