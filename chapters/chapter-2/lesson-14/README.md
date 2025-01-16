@@ -1,60 +1,78 @@
-# Searching Files with `find`
+# Searching Files with `grep`
 
-## What is `find`?
+## What is `grep`?
 
-The **`find`** command is a powerful tool for locating files and directories in your system based on their name, size, type, and other attributes. Unlike `grep`, which searches for content inside files, `find` is used to search for files and directories by their names and characteristics.
+The **`grep`** command is a powerful tool used in the terminal to search for specific text or patterns in files. It's commonly used for finding keywords or phrases in logs, scripts, and other text files.
 
 ### Basic Usage
 
-To find a file by its exact name, use the following syntax:
+To search for a word or phrase in a file using `grep`, you can run the following command:
 
 ```bash
-find directory_path -name "filename"
+grep "search_term" filename
 ```
 
-For example, if you're looking for a file named `hello.txt` in your home directory:
+For example, if you want to find the word "hello" in a file called `words.txt`, you would use:
 
 ```bash
-find ~ -name "hello.txt"
+grep "hello" words.txt
 ```
 
-This will search for `hello.txt` within your home directory.
+This will display all lines in `words.txt` that contain the word "hello". It’s case-sensitive, meaning it will only match exactly "hello" (not "Hello" or "HELLO").
 
-### Pattern Search
+## Searching Multiple Files
 
-You can use wildcards like `*` to match patterns. For example, to find all `.txt` files:
+You can search for a term in more than one file at a time by specifying multiple filenames:
 
 ```bash
-find directory_path -name "*.txt"
+grep "search_term" file1.txt file2.txt
 ```
 
-This searches for all files that end with `.txt` in the specified directory.
+This will show matches for the term in both `file1.txt` and `file2.txt`.
 
-You can also use `*` to match any part of a filename. For example, if you want to find all files containing "chad" in their name:
+## Recursive Search
+
+If you want to search for a term in an entire directory, including all subdirectories, you can use the `-r` (recursive) flag:
 
 ```bash
-find directory_path -name "*chad*"
+grep -r "search_term" .
 ```
 
-This will list any files that have "chad" in their name, no matter where the word appears.
+Here, the `.` represents the current directory. This command will search through all files in the current directory and any subdirectories.
 
 ## Assignment Instructions
 
-To find files containing the word "joint" in their name within the `worldbanc/public/products` directory, run the following `find` command:
+1. **Search for "CRITICAL" in a Log File:**
 
-```bash
-find worldbanc/public/products -name "*joint*"
-```
+   Use the `grep` command to search for the word "CRITICAL" (in all caps) in the file located at:
 
-This will search the `products` directory for files that include the word "joint" in their filename. This can help you investigate accounts that may involve joint owners.
+   ```bash
+   worldbanc/private/logs/2024-01-10.log
+   ```
+
+   The command would look like this:
+
+   ```bash
+   grep "CRITICAL" worldbanc/private/logs/2024-01-10.log
+   ```
+
+2. **Search for "CRITICAL" in the Entire Logs Directory:**
+
+   To search for the word "CRITICAL" across all files in the `logs` directory, including any subdirectories, use the recursive flag:
+
+   ```bash
+   grep -r "CRITICAL" worldbanc/private/logs
+   ```
+
+   This will search through all the files in `logs` and display any lines containing "CRITICAL".
 
 ### Helpful Tips
 
-- **Search Subdirectories**: The `find` command searches recursively by default, meaning it will look through all subdirectories inside the specified directory.
-- **Case Sensitivity**: By default, `find` is case-sensitive. If you need a case-insensitive search, use the `-iname` option:
+- **Autocompletion**: When typing a file or directory name, press **Tab** to autocomplete it.
+- **Case Sensitivity**: The search is case-sensitive by default. If you need a case-insensitive search, use the `-i` flag:
 
   ```bash
-  find directory_path -iname "*joint*"
+  grep -i "critical" filename
   ```
 
-The `find` command is useful for quickly locating files based on their names or patterns, making it a key tool for file management in the terminal.
+By using `grep`, you can quickly and efficiently search through files and logs for specific information.

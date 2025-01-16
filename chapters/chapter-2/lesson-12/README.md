@@ -1,35 +1,39 @@
-# Working with Your Home Directory
+## Copy Command
 
-## What is the Home Directory?
+The `cp` command allows you to copy a file or directory from one location to another.
 
-Your **home directory** is where you store personal files and work on your projects. It's where you start when you log into your system. It's the safest place to work, and you should keep most of your files here.
+### Copy a file
 
-## The `~` Alias
+To copy a file, use the following command:
 
-The **`~` (tilde)** symbol is a shortcut for your home directory. Instead of typing out the full path to your home directory, you can just use `~`.
+```bash
+cp source_file.txt destination/
+```
 
-### Example Usage:
+### Copy a directory recursively
 
-- To go to your home directory, type:
+You can also copy a directory and all of its contents recursively by adding the `-R` flag:
 
-  ```bash
-  cd ~
-  ```
+```bash
+cp -R my_dir new_dir
+```
 
-- To list the contents of your home directory:
+---
 
-  ```bash
-  ls ~
-  ```
+## Assignment: Verifying Transaction Backups
 
-## Be Careful Outside Your Home Directory
+1. Navigate to the `worldbanc/private/transactions/` directory.
 
-Other directories on your system, like `/bin`, `/etc`, and `/var`, are important for your system to run properly. Modifying or deleting files in these directories can cause problems with your system.
+   - You should see several files containing transaction data from different years.
 
-## Best Practices
+2. Inside the `transactions` directory, locate the `backups` folder. It seems that something is missing!
 
-- **Keep your files in your home directory**.
-- **Use `~` to quickly get to your home directory**.
-- **Be careful when working in other system directories**.
+3. Copy the missing file from the `transactions` directory into the `backups` directory so that all transactions have a backup.
 
-This will help you stay organized and avoid breaking important parts of your system.
+4. Once you've copied the file, list the contents of the `backups` directory to verify the backup.
+
+```bash
+ls backups/
+```
+
+5. **Verification**: Ensure that the missing file now appears in the `backups` directory. If the file is correctly copied, the backup is successfully completed.
