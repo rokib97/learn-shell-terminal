@@ -1,47 +1,35 @@
-# Lesson 4: What Is a Shell?
+# Lesson 4: Understanding Shells and REPL
 
-## Understanding the Shell
+## What Is a Shell?
 
-A **shell** is a program that interprets and executes the commands you type into a terminal. It allows you to interact with the operating system by issuing text-based commands and receiving the results of those commands.
+The terminal is a program that allows you to issue text-based commands and view the output of those commands. But what is the program that runs those commands? That's a shell.
 
-### Main Role of a Shell
+Shells do a lot of things, but their main job is to interpret the commands you type and execute them.
 
-- **Interpretation:** The shell reads the command you type and determines how to execute it.
-- **Execution:** The shell runs the command by launching other programs or processes on your computer.
-- **Output:** The shell displays the results of the executed command and then returns control to you with a new prompt.
+## Shells as REPL
 
-### Shells as REPLs
+Shells are often referred to as "REPL"s, which stands for:
 
-Shells are often referred to as **REPLs**, which stands for:
+- **Read**: The shell reads the command you type.
+- **Eval (Evaluate)**: The shell evaluates the command by running other programs on your computer.
+- **Print**: The shell prints the output of the command.
+- **Loop**: The shell gives you a new prompt to type another command and repeats the process.
 
-- **Read**: The shell reads the command you input.
-- **Eval (Evaluate)**: The shell processes and evaluates the command.
-- **Print**: The shell displays the output.
-- **Loop**: The shell provides a new prompt, ready for the next command.
+In simple terms, shells:
 
-### Example Shell Output
+1. Read the commands you type.
+2. Evaluate those commands by running the corresponding programs.
+3. Print the output of the commands.
+4. Give you a new prompt to type another command and continue the loop.
 
-When you type a command in a shell, the process looks like this:
+---
+
+## Example Command Output
+
+For example, in the terminal:
 
 ```bash
-$ expr 123456 + 7890
-131346
-$
-You enter expr 123456 + 7890.
-The shell runs the expr program, evaluates the sum, and prints the result 131346.
-It then gives you a new prompt ($) to type the next command.
-Assignment
-In your shell, run the following command:
-
-bash
-Copy
-Edit
-expr 123456 + 7890
-Paste the output of that command into the text box on the right.
-
-Tip
-To help clarify the difference between prompts and outputs, here's a quick breakdown:
-
-Prompt: The shell’s request for a command, usually in the format $ or username@hostname ~ %.
-Output: The result produced by the command, displayed after you execute it.
+wagslane@MacBook-Pro ~ % echo hello
+hello
+wagslane@MacBook-Pro ~ %
 ```
