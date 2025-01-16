@@ -1,36 +1,70 @@
-# Lesson 7: Navigating Command History
+# Viewing Files in the Terminal with `more` and `less`
 
-## Re-running Commands Efficiently
+## Understanding File Browsing
 
-Typing out long commands repeatedly can be tedious. To save time, you can easily navigate your command history.
+When working with large files in the terminal, it’s often impractical to view everything at once. The `more` and `less` commands allow you to view file contents one page at a time. These commands provide an interactive experience, making it easier to navigate large files.
 
-### Using Arrow Keys
+### The `more` Command
 
-- **Up Arrow (↑):** Scroll backward through your previous commands.
-- **Down Arrow (↓):** Scroll forward to more recent commands.
+The `more` command is used to view the contents of a file one screen at a time. It’s a basic pager that allows you to scroll down a file, but it doesn't have as many features as the `less` command.
 
-**Example:**
+### The `less` Command
 
-1. Type the following commands in your terminal:
+The `less` command is a more advanced pager that allows you to scroll both forward and backward through a file. It also includes additional features, such as line numbers, making it more versatile than `more`. It is recommended to use `less` instead of `more` when available.
 
-   ```bash
-   echo hello
-   echo world
-   ```
+### Basic Usage:
 
-2. Press the **up arrow** to navigate back through these commands.
-3. Press the **down arrow** to return to the most recent command.
-
-### Clearing the Terminal
-
-If your terminal feels cluttered, you can clear it without losing your command history.
-
-- Run the `clear` command:
+- **View the file content one page at a time:**
 
   ```bash
-  clear
+  less filename.txt
   ```
 
-- Or press **Ctrl + L** to clear the screen.
+- **Scroll down by pressing `Enter` to move one line at a time.**
 
-**Note:** Clearing the terminal only removes visible text but keeps the command history intact.
+- **Scroll down by pressing the spacebar to move a full page.**
+
+- **Scroll up by pressing `b` (back).**
+
+- **Exit the `less` program by pressing `q`.**
+
+## Assignment Instructions
+
+1. **Run the `less` Command on the `2023.csv` File:**
+
+   Navigate to the `worldbanc/private/transactions/` directory and run the following command:
+
+   ```bash
+   less 2023.csv
+   ```
+
+   You’ll be taken into an interactive mode where you can scroll through the file one page at a time. Press `Enter` to scroll down one line, or press the spacebar to move a full page down. Press `q` to exit when you’re done.
+
+2. **Use the `-N` Flag to Display Line Numbers:**
+
+   Run the following command to see the line numbers along with the content of the file:
+
+   ```bash
+   less -N 2023.csv
+   ```
+
+   This will allow you to keep track of the exact line number you're viewing. Use the spacebar to scroll down or press `b` to go back.
+
+3. **Find and View Line 153:**
+
+   Scroll through the file or use the line number to navigate directly to line 153. You can do this by searching for the line number or manually scrolling until you reach it.
+
+4. **Verify the Content of Line 153:**
+
+   After navigating to line 153, verify the content displayed. Ensure that it’s the correct line and matches the expected data.
+
+5. **Exit the `less` Program:**
+
+   Once you've completed the verification, press `q` to exit `less` and return to the terminal prompt.
+
+## Troubleshooting
+
+- If `less` doesn’t work, it might not be installed on your system. In that case, you can use `more`, but `less` is recommended when available.
+- Use the `q` key to exit the `less` program if you feel stuck.
+
+This guide will help you navigate large files more effectively, allowing you to examine specific sections of the file without printing everything to the terminal.

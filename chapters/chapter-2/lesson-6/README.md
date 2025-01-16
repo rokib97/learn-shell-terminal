@@ -1,66 +1,90 @@
-# Lesson 6: Shell Command History
+# Viewing Files in the Terminal with `head` and `tail`
 
-## Viewing Command History
+## Understanding Files
 
-When you're working in a REPL, it's really helpful to be able to see the commands you've typed in the past. This makes it easier to:
+Files are an essential part of any operating system. They serve as containers for data, whether it’s text, images, or other media. Files can be small or large, and managing them efficiently is key when working with a large amount of data.
 
-- Re-run previous commands
-- Copy and paste commands into a script for reuse
+## The `head` Command
 
-To print out the history of commands you've typed in your shell, you can use the `history` command:
+The `head` command is used to view the first few lines of a file. By default, it shows the first 10 lines, but you can specify a different number of lines if needed.
 
-```bash
-history
-```
+### Basic Usage:
 
-This will display a list of all previously executed commands in your current shell session.
+- **View the first 10 lines of a file:**
 
----
+  ```bash
+  head file1.txt
+  ```
 
-## Assignment
+- **View the first n lines of a file:**
 
-### Step 1: Set Variables
+  ```bash
+  head -n 6 file1.txt
+  ```
 
-In your shell, set two variables:
+  This will display the first 6 lines of `file1.txt`.
 
-```bash
-department="engineering"
-team="ops"
-```
+## The `tail` Command
 
-### Step 2: Print a Message Using Variables
+The `tail` command shows the last few lines of a file. Like `head`, it displays 10 lines by default, but you can specify a different number.
 
-Use the `echo` command to print the following message by referencing the variables:
+### Basic Usage:
 
-```bash
-echo "I work in $department on $team"
-```
+- **View the last 10 lines of a file:**
 
-**Expected Output:**
+  ```bash
+  tail file1.txt
+  ```
 
-```
-I work in engineering on ops
-```
+- **View the last n lines of a file:**
 
-### Step 3: View Command History
+  ```bash
+  tail -n 5 file1.txt
+  ```
 
-Run the `history` command to view the list of previously executed commands:
+  This will display the last 5 lines of `file1.txt`.
 
-```bash
-history
-```
+## Assignment Instructions
 
-This will display the sequence of commands you've used, including the variable assignments and the `echo` command.
+1. **Navigate to the `worldbanc/private/transactions/` Directory:**
 
----
+   Use the `cd` command to enter the directory:
 
-## Example Output
+   ```bash
+   cd worldbanc/private/transactions/
+   ```
 
-```bash
-1  department="engineering"
-2  team="ops"
-3  echo "I work in $department on $team"
-4  history
-```
+2. **View the Contents of the `2023.csv` File:**
 
-This output shows the steps taken to complete the assignment and how the `history` command lists those actions.
+   Since the file is large, use the `cat` command to inspect the full contents:
+
+   ```bash
+   cat 2023.csv
+   ```
+
+3. **Use the `head` Command to Print the First 6 Lines:**
+
+   Run the following command to display the first 6 lines, including the header and the first 5 transactions:
+
+   ```bash
+   head -n 6 2023.csv
+   ```
+
+4. **Use the `tail` Command to Print the Last 5 Lines:**
+
+   Display the last 5 lines of the file:
+
+   ```bash
+   tail -n 5 2023.csv
+   ```
+
+5. **Combine the First 6 and Last 5 Lines:**
+
+   Copy both the output from the `head` and `tail` commands. You should now have a total of 11 lines to submit.
+
+## Troubleshooting
+
+- If you cannot find the `2023.csv` file, double-check the directory path using the `pwd` command.
+- If `head` or `tail` commands aren’t working, ensure you’re in the correct directory and the file exists by running `ls`.
+
+Use this guide to navigate and display portions of large files in the terminal, helping you to work with only the data you need at the moment.

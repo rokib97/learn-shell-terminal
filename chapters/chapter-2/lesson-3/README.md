@@ -1,29 +1,70 @@
-# Lesson 3: What Is a Terminal?
+# Navigating Parent Directories in the Filesystem
 
-## Understanding the Terminal
+## Understanding Parent Directories
 
-The terms **shell**, **CLI**, and **terminal** are often used interchangeably to describe programs for issuing text-based commands. However, they have distinct meanings:
+In the filesystem, directories are organized in a hierarchical structure. The **`cd`** command is used to navigate into directories, but to move back up to a parent directory, you can use the special alias:
 
-- **Terminal:** Originally referred to a physical device (keyboard and screen) used for typing commands.
-- **Terminal Emulator:** A modern program that emulates a physical terminal, allowing users to enter commands in a window on their computer.
-- **Shell:** The program that interprets and executes the commands entered in the terminal emulator.
+```bash
+..
+```
 
-## Function of a Terminal Emulator
+### Key Concept:
 
-A **terminal emulator** is responsible for:
+- **`..`** refers to the **parent directory** of your current working directory.
+- This allows you to move **up one level** in the directory tree.
 
-- Displaying text on the screen.
-- Processing user keystrokes.
-- Communicating with the shell to execute commands.
+### Example:
 
-The terminal emulator itself does not determine which commands are available—that's the role of the shell.
+If you're currently in:
 
-## Example Terminal Emulators
+```
+/home/user/worldbanc
+```
 
-- **macOS:** Terminal, iTerm2
-- **Linux:** GNOME Terminal, Konsole
-- **Windows:** Command Prompt, PowerShell, Windows Terminal
+Running:
 
----
+```bash
+cd ..
+```
 
-Understanding how a terminal emulator works is essential for effective command-line usage and system navigation.
+Will take you to:
+
+```
+/home/user
+```
+
+## Assignment
+
+### Step 1: Navigate to the Parent Directory
+
+If you're inside the **worldbanc** directory, move up to its parent directory using:
+
+```bash
+cd ..
+```
+
+### Step 2: List the Contents of the worldbanc Directory
+
+From the parent directory, list the contents of the **worldbanc** directory with:
+
+```bash
+ls worldbanc
+```
+
+### Example Output:
+
+```
+README.md
+logs
+scripts
+config
+```
+
+This command displays the contents of the **worldbanc** directory without needing to navigate back into it.
+
+## Notes
+
+- **`cd ..`** moves you up one level in the directory hierarchy.
+- **`ls [directory]`** lists the contents of a directory without changing your current location.
+
+Use these commands to efficiently navigate and explore directories in your filesystem.

@@ -1,35 +1,79 @@
-# Lesson 4: Understanding Shells and REPL
+# Absolute vs. Relative Paths
 
-## What Is a Shell?
+## Understanding File Paths
 
-The terminal is a program that allows you to issue text-based commands and view the output of those commands. But what is the program that runs those commands? That's a shell.
-
-Shells do a lot of things, but their main job is to interpret the commands you type and execute them.
-
-## Shells as REPL
-
-Shells are often referred to as "REPL"s, which stands for:
-
-- **Read**: The shell reads the command you type.
-- **Eval (Evaluate)**: The shell evaluates the command by running other programs on your computer.
-- **Print**: The shell prints the output of the command.
-- **Loop**: The shell gives you a new prompt to type another command and repeats the process.
-
-In simple terms, shells:
-
-1. Read the commands you type.
-2. Evaluate those commands by running the corresponding programs.
-3. Print the output of the commands.
-4. Give you a new prompt to type another command and continue the loop.
+File paths are used to locate files and directories within a filesystem. They can be **absolute** or **relative**, depending on how they reference locations.
 
 ---
 
-## Example Command Output
+## Relative Paths
 
-For example, in the terminal:
+A **relative path** specifies a file or directory location based on the current working directory.
+
+### Example Directory Structure:
+
+```
+vehicles
+├── cars
+│   ├── fords
+│   │   ├── mustang.txt
+│   │   └── focus.txt
+```
+
+### Relative Path Examples:
+
+- From the `vehicles` directory to `mustang.txt`:
+  ```bash
+  cars/fords/mustang.txt
+  ```
+- From the `cars` directory to `mustang.txt`:
+  ```bash
+  fords/mustang.txt
+  ```
+- From the `fords` directory to `mustang.txt`:
+  ```bash
+  mustang.txt
+  ```
+
+Relative paths are shorter and easier to work with when you're in or near the target directory.
+
+---
+
+## Absolute Paths
+
+An **absolute path** specifies a file or directory location starting from the root directory `/`.
+
+### Absolute Path Example:
+
+If `vehicles` is located at the root of the filesystem, the absolute path to `mustang.txt` is:
 
 ```bash
-wagslane@MacBook-Pro ~ % echo hello
-hello
-wagslane@MacBook-Pro ~ %
+/vehicles/cars/fords/mustang.txt
 ```
+
+Regardless of the current directory, this path always points to the same file.
+
+---
+
+## Choosing Between Absolute and Relative Paths
+
+### When to Use Relative Paths:
+
+- When working within a known directory structure.
+- For shorter and more readable commands.
+- In scripts that are run from specific directories.
+
+### When to Use Absolute Paths:
+
+- When the current directory may vary.
+- When providing exact file locations to others.
+- In scripts that must work regardless of the working directory.
+
+---
+
+## Summary
+
+- **Relative Path:** Depends on the current directory. Easier for internal navigation.
+- **Absolute Path:** Starts from the root `/`. More reliable for universal access.
+
+Using the appropriate path type improves workflow efficiency and reduces navigation errors.
