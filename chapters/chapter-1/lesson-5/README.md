@@ -28,9 +28,11 @@ In simple terms, shells:
 
 For example, in the terminal:
 
+```bash
 wagslane@MacBook-Pro ~ % echo hello
 hello
 wagslane@MacBook-Pro ~ %
+```
 
 In this case:
 
