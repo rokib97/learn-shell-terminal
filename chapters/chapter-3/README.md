@@ -1,4 +1,4 @@
-# Chapter 2: Filesystem
+# Chapter 3: Filesystem
 
 In this chapter, you'll learn the Filesystem.
 
