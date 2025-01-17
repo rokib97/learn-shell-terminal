@@ -15,7 +15,7 @@ drwxrwxrwx
    - `-` → Regular file (e.g., `-rwxrwxrwx`)
    - `d` → Directory (e.g., `drwxrwxrwx`)
 
-2. **Permission Groups** (Next 9 Characters)  
+2. **Permission Groups** (Next few Characters)  
    Split into three sets of `rwx` for:
 
    - **Owner** (User)

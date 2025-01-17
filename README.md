@@ -13,7 +13,7 @@ This repository contains notes, exercises, and resources for learning Shell and 
   Understanding directories, file management, and navigating the filesystem.
 
 - [Chapter 3: Permission](./chapters/chapter-3/README.md)  
-  Advanced topics including searching files, file permissions, and more.
+  Understanding and managing file permissions and ownership.
 
 ## How to Use This Repository
 
