@@ -8,6 +8,30 @@ The `chmod` command is used to change file and directory permissions. It stands 
 chmod [options] permissions file/directory
 ```
 
+### Explanation of `chmod` Command
+
+- `u` → **User** (Owner)
+- `g` → **Group**
+- `o` → **Others**
+- `=` → **Set permissions to** the specified values
+- `rwx` → **Read**, **Write**, and **Execute** permissions
+- `g=` and `o=` → **Remove all permissions** for group and others
+- `-R` → **Recursively** apply the changes to all contents within the directory
+
+**Example:**
+
+```
+chmod -R u=rwx,g=,o= DIRECTORY
+```
+
+- Grants **read**, **write**, and **execute** permissions to the owner.
+- Removes all permissions from the group and others.
+- Applies changes to the directory and all its contents.
+
+🔎 **Tip:** Use `.` as a shortcut for the **current directory**.
+
+---
+
 ### Assignment: Secure the Private Directory
 
 1. **Check Current Permissions:**  
