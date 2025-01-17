@@ -1,6 +1,6 @@
-# Chapter 3: Filesystem
+# Chapter 3: Permission
 
-In this chapter, you'll learn the Filesystem.
+In this chapter, you'll learn the Filesystem Permission.
 
 ## Lessons
 
