@@ -67,7 +67,14 @@ chmod -R u=rwx,g=,o= DIRECTORY
    **Expected Output:**
 
    ```
-   drwx------ 2 user group 4096 Jan 17 10:00 private
+   total 0
+   drwx------@ 7 username  staff  224 Jan 13 21:04 bin
+   drwx------@ 4 username  staff  128 Jan 13 21:04 cmd
+   drwx------@ 3 username  staff   96 Jan 13 21:04 contacts
+   drwx------@ 3 username  staff   96 Jan 13 21:04 customers
+   drwx------@ 3 username  staff   96 Jan 15 16:04 example
+   drwx------@ 9 username  staff  288 Jan 13 21:04 logs
+   drwx------@ 7 username  staff  224 Jan 15 16:03 transactions
    ```
 
 ---
