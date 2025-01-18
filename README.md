@@ -15,6 +15,9 @@ This repository contains notes, exercises, and resources for learning Shell and 
 - [Chapter 3: Permission](./chapters/chapter-3/README.md)  
   Understanding and managing file permissions and ownership.
 
+- [Chapter 4: Programs](./chapters/chapter-4/README.md)  
+  Understanding and managing Programs, path and Environment varibale.
+
 ## How to Use This Repository
 
 1. Explore each chapter as you progress through the materials.
