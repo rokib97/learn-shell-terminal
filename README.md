@@ -16,13 +16,23 @@ This repository contains notes, exercises, and resources for learning Shell and 
   Understanding and managing file permissions and ownership.
 
 - [Chapter 4: Programs](./chapters/chapter-4/README.md)  
-  Understanding and managing Shell Configuration, PATH Config and Environment Variables.
+  Understanding and managing Shell Configuration, PATH Config, and Environment Variables.
 
 ## How to Use This Repository
 
-1. Explore each chapter as you progress through the materials.
-2. Follow along with the exercises to practice the commands and concepts covered.
-3. Refer to the resources provided in each chapter for further reading and study.
+1. **Operating System Setup:**
+
+   - **Linux/macOS:** The terminal is pre-installed and ready to use.
+   - **Windows:** Use [Git Bash](https://gitforwindows.org/) or enable [WSL (Windows Subsystem for Linux)](https://docs.microsoft.com/en-us/windows/wsl/) for a Unix-like shell experience.
+
+2. **Explore Chapters:**  
+   Navigate through each chapter to progress through the materials.
+
+3. **Practice Exercises:**  
+   Follow the exercises to practice the commands and concepts covered.
+
+4. **Use Additional Resources:**  
+   Refer to the resources provided in each chapter for further reading and study.
 
 ---
 
