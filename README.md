@@ -16,7 +16,7 @@ This repository contains notes, exercises, and resources for learning Shell and 
   Understanding and managing file permissions and ownership.
 
 - [Chapter 4: Programs](./chapters/chapter-4/README.md)  
-  Understanding and managing Programs, path and Environment varibale.
+  Understanding and managing Shell Configuration, PATH Config and Environment Variables.
 
 ## How to Use This Repository
 
