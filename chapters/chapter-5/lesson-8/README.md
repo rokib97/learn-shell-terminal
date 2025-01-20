@@ -1,70 +1,56 @@
-# Working with Files in the Terminal: The `touch` Command
+# Understanding Standard Input (stdin)
 
-## Understanding the `touch` Command
+## Overview
 
-The `touch` command is primarily used to update the access and modification timestamps of a file. However, if the specified file does not exist, `touch` will create an empty file with that name. This feature makes it a useful tool for quickly creating files without modifying existing ones.
+Standard Input, commonly referred to as **stdin**, is the default data stream that programs use to receive input from the user or another source. In most operating systems, stdin is typically connected to the keyboard, allowing users to input data interactively.
 
-### Basic Usage:
+## How stdin Works
 
-- **Create a new file:**
+When a program runs and requires input, it will pause execution and wait for data from stdin. Once the user provides input and presses **Enter**, the program processes the provided data.
 
-  ```bash
-  touch new_file.txt
-  ```
+## Reading from stdin in Different Programming Languages
 
-- **Create multiple files at once:**
+- **Bash (Shell Scripting):**
 
   ```bash
-  touch file1.txt file2.txt file3.txt
+  read -p "Enter your name: " name
+  echo "Hello, $name"
   ```
 
-- **Update the timestamp of an existing file:**
-
-  ```bash
-  touch existing_file.txt
+- **Python:**
+  ```python
+  # execution stops until the user types
+  # something (in this case "Lane") and presses enter
+  name = input("What is your name? ")
+  print("Hello,", name)
+  # Hello, Lane!
   ```
 
-### Why Use `touch`?
+**Sample Interaction:**
 
-- To quickly create new, empty files when writing scripts.
-- To update the timestamp of a file without altering its content.
-- To ensure that files exist, especially in automated processes.
+```
+What is your name? Lane
+Hello, Lane
+```
 
-## Assignment Instructions
+## Redirecting stdin
 
-1. **Navigate to the `credit_cards` Directory:**
+stdin can also be redirected from files or other streams using operators like `<` in command-line environments.
 
-   First, change into the `worldbanc/public/products/credit_cards` directory:
+Example:
 
-   ```bash
-   cd worldbanc/public/products/credit_cards
-   ```
+```bash
+python script.py < input.txt
+```
 
-2. **Create the `credithistory.txt` File:**
+This feeds the content of `input.txt` to `script.py` as stdin input.
 
-   Use the `touch` command to create a new file named `credithistory.txt`:
+## Assignment
 
-   ```bash
-   touch credithistory.txt
-   ```
+Run the `worldbanc/private/bin/worldbanc.sh` program again. Notice that it makes use of stdin to read your name and email.
 
-   This command will create an empty `credithistory.txt` file in the current directory.
+Take a closer look at the code in the `worldbanc.sh` file. What command does it use to read from stdin?
 
-3. **Verify the File Creation:**
+## Conclusion
 
-   After running the `touch` command, use the `ls` command to list the contents of the `credit_cards` directory and verify that the new file has been created:
-
-   ```bash
-   ls
-   ```
-
-4. **Verify the Directory Contents:**
-
-   Once you've confirmed that `credithistory.txt` is in the directory, check if all the necessary files are in place. This step ensures the directory structure is correct and that the file was created as expected.
-
-## Troubleshooting
-
-- If `touch` isn’t working, check that you have write permissions for the directory. Use `ls -l` to view permissions.
-- Ensure you're in the correct directory before running `touch` by using the `pwd` command to confirm your current location.
-
-This guide helps you create and manage files efficiently in the terminal, especially when automating tasks or organizing project directories.
+Understanding and using stdin effectively allows for dynamic user input handling and automation through redirection. Most programming languages provide built-in ways to read from stdin, making it a fundamental concept in software development.
