@@ -49,11 +49,7 @@ If you have suggestions for improving this repository or wish to contribute addi
 
 ## ⚙️ License
 
-This repository is licensed under the MIT License.
-
-Copyright (c) 2025 Rokibul Islam.
-
-See the [LICENSE](./LICENSE) file for more details.
+This repository is licensed under the MIT License. See the [LICENSE](https://github.com/rokib97/learn-shell-terminal/blob/main/LICENSE) file for more details.
 
 ---
 
