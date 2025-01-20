@@ -1,74 +1,50 @@
-# Viewing Files in the Terminal
+# Exit Codes in Shell Scripts
 
-## Understanding Files
+Exit codes (also known as return codes or status codes) are used by programs to indicate whether they executed successfully or encountered an error.
 
-Files are fundamental components of any operating system. They are essentially blobs of data where the raw bytes can represent anything—text, images, videos, and more.
+## Exit Code Meanings
 
-## The `cat` Command
+- **0**: Indicates successful execution.
+- **Non-zero (1-255)**: Indicates an error occurred.
+  - **1**: Common "catch-all" error code, used when no specific error code is defined.
 
-The `cat` command, short for **concatenate**, is primarily used to display the contents of files in the terminal. While it may seem unintuitive for viewing single files, its true power lies in combining and displaying multiple files at once.
+Programs that execute other programs often check exit codes to determine the next steps, such as logging errors or restarting services.
 
-### Basic Usage:
+## Checking Exit Codes
 
-- **View the contents of a single file:**
+In the shell, the exit code of the last executed command can be accessed using the special variable `$?`.
 
-  ```bash
-  cat file1.txt
-  ```
+### Example Usage
 
-- **Concatenate and view multiple files:**
+```sh
+ls ~
+echo $?  # Expected output: 0 (success)
 
-  ```bash
-  cat file1.txt file2.txt
-  ```
+ls /does/not/exist
+echo $?  # Expected output: 1 (error)
+```
 
 ## Assignment Instructions
 
-1. **Navigate to the `worldbanc` Directory:**
+1. Run the script `private/bin/warn.sh` without setting the required environment variables (`WARN_MESSAGE` and `WARN_FROM_NAME`).
+2. Check the exit code using the `echo $?` command.
 
-   If you're not already in the `worldbanc` directory, run:
+## Helpful Commands
 
-   ```bash
-   cd worldbanc
-   ```
+To remove an environment variable:
 
-2. **Confirm Your Location:**
+```sh
+unset ENV_VAR_NAME
+```
 
-   Use the `ls` command to verify that you're in the correct directory. You should see a `public` directory listed:
+Alternatively, set it to an empty string:
 
-   ```bash
-   ls
-   ```
+```sh
+export ENV_VAR_NAME=""
+```
 
-3. **Access the `public` Directory:**
+## Additional Notes
 
-   Change into the `public` directory:
-
-   ```bash
-   cd public
-   ```
-
-4. **Locate the `pr_ideas.txt` File:**
-
-   Confirm that the `pr_ideas.txt` file is present:
-
-   ```bash
-   ls
-   ```
-
-5. **View the Contents of `pr_ideas.txt`:**
-
-   Display the file's contents using the `cat` command:
-
-   ```bash
-   cat pr_ideas.txt
-   ```
-
-If you successfully see the contents of `pr_ideas.txt`, you've completed this task!
-
-## Troubleshooting
-
-- If you cannot find the `public` directory, ensure you're in the correct location by running `pwd`.
-- If `cat` isn't working, make sure the file exists by running `ls` first.
-
-Use this guide to effectively navigate and read files in the terminal.
+- Always check exit codes when scripting automation or debugging.
+- Some programs may use specific exit codes to indicate different error types.
+- Use `man <command>` to check if specific exit codes are documented.
