@@ -1,82 +1,59 @@
-# Working with Directories in the Terminal: The `mkdir` Command
+# Piping in the Shell
 
-## Understanding Directories
+Piping is a powerful feature in the shell that allows you to send the output of one command directly into the input of another. This enables complex automation tasks to be accomplished efficiently.
 
-A **directory** (sometimes called a "folder") is a container used to store files and other directories. It helps in organizing files in a hierarchical structure, making it easier to navigate through the filesystem.
+## What is Piping?
 
-### The `mkdir` Command
+The **pipe operator** (`|`) allows you to take the **stdout** (output) of one command and send it as the **stdin** (input) to another command. This makes it possible to chain multiple commands together in a single line to perform advanced tasks.
 
-The `mkdir` command stands for "make directory" and is used to create new directories within the current directory.
+### Example: Basic Pipe Usage
 
-### Basic Usage:
+Let’s consider the following example:
 
-- **Create a new directory:**
+```bash
+echo "Have you heard the tragedy of Darth Plagueis the Wise?" | wc -w
+```
 
-  ```bash
-  mkdir my_directory
-  ```
+- The `echo` command outputs the text `"Have you heard the tragedy of Darth Plagueis the Wise?"`.
+- The pipe operator (`|`) sends the output from `echo` as input to the `wc` command.
+- The `wc` command counts the number of words in the input received. The `-w` flag tells `wc` to count only words.
 
-- **Create multiple directories at once:**
+The result is:
 
-  ```bash
-  mkdir dir1 dir2 dir3
-  ```
+```
+10
+```
 
-### Why Use `mkdir`?
+## Assignment: Count Transactions Involving "Bob"
 
-- To organize files into specific folders.
-- To create new directories for projects or different categories of files.
-- To keep the filesystem clean and easy to navigate.
+Let’s use piping to count how many transactions involve "Bob" in a directory of transaction files.
 
-## Assignment Instructions
+### Step 1: Search for Transactions Involving "Bob"
 
-1. **Navigate to the `credit_cards` Directory:**
+To search for the word "Bob" in all files within the `worldbanc/private/transactions` directory, but **excluding** the `backups` directory, use the following command:
 
-   Make sure you're in the `worldbanc/public/products/credit_cards` directory:
+```bash
+grep -R "Bob" worldbanc/private/transactions --exclude-dir="backups"
+```
 
-   ```bash
-   cd worldbanc/public/products/credit_cards
-   ```
+- `grep -R "Bob"` searches recursively for the word "Bob" in all files.
+- `--exclude-dir="backups"` ensures that files in the `backups` directory are excluded from the search.
 
-2. **List the Contents of the `credit_cards` Directory:**
+### Step 2: Count the Number of Transactions
 
-   Run the `ls` command to view the contents of the directory. You should see a file named `tbills.txt`. This file doesn’t belong in the `credit_cards` directory because it is related to investments, not credit cards.
+To count the number of occurrences (lines) involving "Bob," pipe the output of the `grep` command into `wc -l`:
 
-   ```bash
-   ls
-   ```
+```bash
+grep -R "Bob" worldbanc/private/transactions --exclude-dir="backups" | wc -l
+```
 
-3. **Go Back to the `products` Directory:**
+This will output the total number of transactions involving "Bob."
 
-   Navigate back to the `worldbanc/public/products` directory:
+### Final Step: Submit the Result
 
-   ```bash
-   cd ..
-   ```
+- Copy the **number of transactions** from the output (just the number itself).
+- Paste it into the provided text field and submit your answer.
 
-4. **Create the `investments` Directory:**
+## Tip
 
-   Run the following command to create a new directory named `investments` in the `products` directory:
-
-   ```bash
-   mkdir investments
-   ```
-
-5. **Verify the Directory Creation:**
-
-   After creating the `investments` directory, use the `ls` command to confirm that the new directory is present in the `products` directory:
-
-   ```bash
-   ls
-   ```
-
-6. **Verify the Contents:**
-
-   Once you've confirmed the creation of the `investments` directory, check if the file `tbills.txt` is out of place in the `credit_cards` directory and ensure the directory structure is as expected.
-
-## Troubleshooting
-
-- If you cannot create a directory, check if you have permission to write to the parent directory. Use `ls -l` to check the permissions of the current directory.
-- If you’re unsure about your current location, use the `pwd` command to verify the path.
-
-This guide helps you manage and organize files into directories, providing a structured way to keep your project files organized.
+If your result is incorrect (e.g., if you get 3002 transactions), make sure that the files in the `transactions` directory match the files in `transactions/backups`. If they don't, create a copy of the correct files.
