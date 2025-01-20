@@ -53,7 +53,7 @@ This repository is licensed under the MIT License.
 
 Copyright (c) 2025 Rokibul Islam.
 
-See the [LICENSE](LICENSE) file for more details.
+See the [LICENSE](./LICENSE) file for more details.
 
 ---
 
