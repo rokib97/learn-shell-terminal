@@ -18,7 +18,7 @@ This repository contains notes, exercises, and resources for learning Shell and 
 - [Chapter 4: Programs](./chapters/chapter-4/README.md)  
   Understanding and managing Shell Configuration, PATH Config, and Environment Variables.
 
-- [Chapter 5: Input/Output](./chapters/chapter-4/README.md)  
+- [Chapter 5: Input/Output](./chapters/chapter-5/README.md)  
   Understanding Input/Output.
 
 ## How to Use This Repository
