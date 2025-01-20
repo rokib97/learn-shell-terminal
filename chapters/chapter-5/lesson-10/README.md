@@ -1,80 +1,38 @@
-# Working with Files in the Terminal: The `mv` Command
+# Interrupting a Running Program
 
-## Understanding the `mv` Command
+Sometimes, programs may get stuck, requiring manual intervention to stop them. Common reasons for needing to stop a running program include:
 
-The `mv` command is used to **move** files or directories from one location to another. It can also be used to **rename** files. The `mv` command is essential when you want to reorganize files, change file names, or transfer files between directories.
+- A typo in the command leading to unexpected behavior.
+- An attempt to access the internet when no connection is available.
+- Processing too much data, leading to long wait times.
+- A bug in the program causing it to hang indefinitely.
 
-### Basic Usage:
+## How to Stop a Running Program
 
-- **Rename a file:**
+To stop a running program, you can press `Ctrl + C`. This keyboard shortcut sends a "SIGINT" (Signal Interrupt) to the running process, instructing it to terminate.
 
-  ```bash
-  mv old_file.txt new_name.txt
-  ```
-
-- **Move a file to a different directory (keeping the same name):**
-
-  ```bash
-  mv file.txt target_directory/
-  ```
-
-- **Move a file to the parent directory:**
-
-  ```bash
-  mv file.txt ../file.txt
-  ```
-
-- **Move a file to a specific directory and rename it:**
-
-  ```bash
-  mv file.txt target_directory/new_name.txt
-  ```
-
-### Why Use `mv`?
-
-- To organize files by moving them to appropriate directories.
-- To rename files without creating duplicates.
-- To update file locations in the filesystem.
+---
 
 ## Assignment Instructions
 
-1. **Navigate to the `credit_cards` Directory:**
+In the `worldbanc/private/bin/` directory, there is a script named `malicious.sh`. As a responsible security auditor, you are tasked with analyzing it.
 
-   First, make sure you're in the `worldbanc/public/products/credit_cards` directory. You can use the `pwd` command to verify your current location.
+### Steps to follow:
 
-   ```bash
-   cd worldbanc/public/products/credit_cards
-   ```
-
-2. **Move the `tbills.txt` File to the `investments` Directory:**
-
-   The goal is to move `tbills.txt` from the `credit_cards` directory to the newly created `investments` directory. The file should retain its original name.
-
-   Run the following command to move the file:
+1. Navigate to the directory:
 
    ```bash
-   mv tbills.txt ../investments/tbills.txt
+   cd worldbanc/private/bin/
    ```
 
-3. **Verify the Move:**
-
-   After moving the file, use the `ls` command to list the contents of the `investments` directory and confirm that `tbills.txt` has been moved correctly:
+2. Run the `malicious.sh` script:
 
    ```bash
-   ls ../investments
+   ./malicious.sh
    ```
 
-4. **Verify the Directory Structure:**
+3. Observe the program's behavior.
 
-   Check the contents of the `credit_cards` directory to ensure that `tbills.txt` has been removed, confirming it was successfully moved.
+4. Use `Ctrl + C` to send a SIGINT signal and stop the program.
 
-   ```bash
-   ls
-   ```
-
-## Troubleshooting
-
-- If the file does not move, ensure that both the source and destination paths are correct. Use `pwd` to check your current directory and adjust the paths accordingly.
-- If you accidentally move the file to the wrong location, use the `find` command to locate it and move it back to the correct directory.
-
-This guide will help you move files efficiently in the terminal, keeping your filesystem organized and easy to navigate.
+By following these steps, you can safely explore the script's functionality while maintaining control over the execution process.

@@ -13,7 +13,7 @@ In this chapter, you'll learn Input/Output.
 - [Lesson 7: Standard Error](./lesson-7/README.md)
 - [Lesson 8: Standard Input](./lesson-8/README.md)
 - [Lesson 9: Piping in the Shell](./lesson-9/README.md)
-- [Lesson 10: Move](./lesson-10/README.md)
+- [Lesson 10: Interrupt](./lesson-10/README.md)
 - [Lesson 11: Remove](./lesson-11/README.md)
 - [Lesson 12: Copy](./lesson-12/README.md)
 - [Lesson 13: Home](./lesson-13/README.md)
