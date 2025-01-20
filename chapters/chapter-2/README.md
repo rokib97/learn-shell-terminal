@@ -1,6 +1,6 @@
 # Chapter 2: Filesystem
 
-In this chapter, you'll learn the Filesystem.
+In this chapter, you'll Explore the structure of filesystems, including file paths, directories, and file management commands. Learn how to navigate, manipulate, and search through files using commands like ls, grep, find, and file manipulation tools like touch, move, and remove.
 
 ## Lessons
 

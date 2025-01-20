@@ -1,6 +1,6 @@
 # Chapter 1: Terminals and Shells
 
-In this chapter, you'll explore the core concepts behind the Shell and Terminal, laying the foundation for more advanced terminal usage.
+In this chapter, you'll explore to the terminal and the shell environment, including essential commands for navigation and file management. Learn about shells, REPL, variables, and how to use command history to enhance your workflow.
 
 ## Lessons
 

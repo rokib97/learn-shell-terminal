@@ -1,6 +1,6 @@
 # Chapter 3: Permission
 
-In this chapter, you'll learn the Filesystem Permission.
+In this chapter, you'll Learn about user permissions and how to manage access control to files and directories. Explore file ownership, the root user, and how to modify permissions using tools like chown and sudo.
 
 ## Lessons
 

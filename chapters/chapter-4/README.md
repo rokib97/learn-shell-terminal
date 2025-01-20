@@ -1,6 +1,6 @@
 # Chapter 4: Programs
 
-In this chapter, you'll learn the Programs.
+In this chapter, you'll Dive into shell configuration and the role of environment variables in customizing your shell environment. Learn how the PATH variable works and how to modify it to control the locations searched for executable programs.
 
 ## Lessons
 

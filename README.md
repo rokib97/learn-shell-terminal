@@ -7,19 +7,19 @@ This repository contains notes, exercises, and resources for learning Shell and 
 ### Chapters
 
 - [Chapter 1: Basics of Shell](./chapters/chapter-1/README.md)  
-  Introduction to the Shell, basic commands, and navigation.
+  Get introduced to the terminal and the shell environment, including essential commands for navigation and file management. Learn about shells, REPL, variables, and how to use command history to enhance your workflow.
 
 - [Chapter 2: Filesystem](./chapters/chapter-2/README.md)  
-  Understanding directories, file management, and navigating the filesystem.
+  Explore the structure of filesystems, including file paths, directories, and file management commands. Learn how to navigate, manipulate, and search through files using commands like ls, grep, find, and file manipulation tools like touch, move, and remove.
 
 - [Chapter 3: Permission](./chapters/chapter-3/README.md)  
-  Understanding and managing file permissions and ownership.
+  Learn about user permissions and how to manage access control to files and directories. Explore file ownership, the root user, and how to modify permissions using tools like chown and sudo.
 
 - [Chapter 4: Programs](./chapters/chapter-4/README.md)  
-  Understanding and managing Shell Configuration, PATH Config, and Environment Variables.
+  Dive into shell configuration and the role of environment variables in customizing your shell environment. Learn how the PATH variable works and how to modify it to control the locations searched for executable programs.
 
 - [Chapter 5: Input/Output](./chapters/chapter-5/README.md)  
-  Understanding Input/Output.
+  Learn about handling standard input, output, and error streams in the shell. Explore how piping, interrupts, and exit codes work to manage and control data flow in a Unix environment.
 
 ## How to Use This Repository
 
