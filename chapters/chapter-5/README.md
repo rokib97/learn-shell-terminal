@@ -9,7 +9,7 @@ In this chapter, you'll learn Input/Output.
 - [Lesson 3: Positional Arguments](./lesson-3/README.md)
 - [Lesson 4: Help](./lesson-4/README.md)
 - [Lesson 5: Exit Codes](./lesson-5/README.md)
-- [Lesson 6: head and tail](./lesson-6/README.md)
+- [Lesson 6: Standard Output](./lesson-6/README.md)
 - [Lesson 7: More and Less](./lesson-7/README.md)
 - [Lesson 8: Touch](./lesson-8/README.md)
 - [Lesson 9: Directories](./lesson-9/README.md)

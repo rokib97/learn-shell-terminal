@@ -1,70 +1,67 @@
-# Viewing Files in the Terminal with `more` and `less`
+# Understanding Standard Error (stderr) and Output Redirection
 
-## Understanding File Browsing
+## What is Standard Error (stderr)?
 
-When working with large files in the terminal, it’s often impractical to view everything at once. The `more` and `less` commands allow you to view file contents one page at a time. These commands provide an interactive experience, making it easier to navigate large files.
+Standard Error, usually referred to as `stderr`, is a data stream used to output error messages. It functions separately from standard output (`stdout`), allowing users to redirect error messages independently of regular output.
 
-### The `more` Command
+By default, both `stdout` and `stderr` print to the terminal. However, they can be redirected to different locations if necessary.
 
-The `more` command is used to view the contents of a file one screen at a time. It’s a basic pager that allows you to scroll down a file, but it doesn't have as many features as the `less` command.
+## Redirecting Streams
 
-### The `less` Command
+You can use redirection operators to send `stdout` and `stderr` to different places:
 
-The `less` command is a more advanced pager that allows you to scroll both forward and backward through a file. It also includes additional features, such as line numbers, making it more versatile than `more`. It is recommended to use `less` instead of `more` when available.
+- `>` redirects `stdout` (standard output)
+- `2>` redirects `stderr` (standard error)
 
-### Basic Usage:
+### Redirecting stdout to a File
 
-- **View the file content one page at a time:**
+```bash
+echo "Hello world" > hello.txt
+cat hello.txt
+# Output:
+# Hello world
+```
 
-  ```bash
-  less filename.txt
-  ```
+### Redirecting stderr to a File
 
-- **Scroll down by pressing `Enter` to move one line at a time.**
+```bash
+cat doesnotexist.txt 2> error.txt
+cat error.txt
+# Output:
+# cat: doesnotexist.txt: No such file or directory
+```
 
-- **Scroll down by pressing the spacebar to move a full page.**
+## Assignment Example
 
-- **Scroll up by pressing `b` (back).**
+There is a script named `process_transactions.sh` located in the `worldbanc/private/bin` directory. This script processes a CSV file and outputs transactions based on the year:
 
-- **Exit the `less` program by pressing `q`.**
+- Modern transactions (after the year 2000) are printed to `stdout`.
+- Old transactions (before the year 2000) are printed to `stderr`.
 
-## Assignment Instructions
+### Steps to Execute the Script
 
-1. **Run the `less` Command on the `2023.csv` File:**
+1. Navigate to the appropriate directory or ensure the script path is correct.
+2. Run the script by passing the `2020.csv` file located in the `worldbanc/private/transactions` directory.
+3. Redirect the stderr output to a temporary log file:
 
-   Navigate to the `worldbanc/private/transactions/` directory and run the following command:
+```bash
+worldbanc/private/bin/process_transactions.sh worldbanc/private/transactions/2020.csv 2> /tmp/worldbanc.log
+```
 
-   ```bash
-   less 2023.csv
-   ```
+4. View the redirected stderr output by using the `cat` command:
 
-   You’ll be taken into an interactive mode where you can scroll through the file one page at a time. Press `Enter` to scroll down one line, or press the spacebar to move a full page down. Press `q` to exit when you’re done.
+```bash
+cat /tmp/worldbanc.log
+```
 
-2. **Use the `-N` Flag to Display Line Numbers:**
+If the `2020.csv` file is missing, compare the files in the `transactions` directory with those in `transactions/backups` and copy the missing files if necessary:
 
-   Run the following command to see the line numbers along with the content of the file:
+```bash
+cp worldbanc/private/transactions/backups/2020.csv worldbanc/private/transactions/
+```
 
-   ```bash
-   less -N 2023.csv
-   ```
+### Key Takeaways
 
-   This will allow you to keep track of the exact line number you're viewing. Use the spacebar to scroll down or press `b` to go back.
-
-3. **Find and View Line 153:**
-
-   Scroll through the file or use the line number to navigate directly to line 153. You can do this by searching for the line number or manually scrolling until you reach it.
-
-4. **Verify the Content of Line 153:**
-
-   After navigating to line 153, verify the content displayed. Ensure that it’s the correct line and matches the expected data.
-
-5. **Exit the `less` Program:**
-
-   Once you've completed the verification, press `q` to exit `less` and return to the terminal prompt.
-
-## Troubleshooting
-
-- If `less` doesn’t work, it might not be installed on your system. In that case, you can use `more`, but `less` is recommended when available.
-- Use the `q` key to exit the `less` program if you feel stuck.
-
-This guide will help you navigate large files more effectively, allowing you to examine specific sections of the file without printing everything to the terminal.
+- Use `>` to redirect `stdout` to a file.
+- Use `2>` to redirect `stderr` to a file.
+- Temporary files in `/tmp` are routinely deleted by the system and are suitable for short-term storage.
