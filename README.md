@@ -48,14 +48,6 @@ Welcome to the **Learn Shell and Terminal** repository! This resource will help 
 
 If you have suggestions for improving this repository or wish to contribute additional resources or exercises, feel free to create a pull request. Contributions are welcome to make this resource more comprehensive and helpful for everyone!
 
----
-
-## ⚙️ License
-
-This repository is licensed under the MIT License. See the [LICENSE](https://github.com/rokib97/learn-shell-terminal/blob/main/LICENSE.txt) file for more details.
-
----
-
 ### Final Notes
 
 Whether you're just starting to learn the shell or looking to deepen your understanding, this repository offers a structured approach to mastering the terminal. Stay consistent, practice regularly, and soon you'll be comfortable navigating and utilizing the shell for all your tasks.
