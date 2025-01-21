@@ -26,28 +26,16 @@ root
 
 ## Assignment: Download and Set Up the WorldBanc Directory
 
-### Step 1: Download the WorldBanc Repository
+### Step 1: Download the WorldBanc Directory
 
-Run the following commands in your terminal to download and set up the **worldbanc** directory:
+Run the following commands in your terminal to download and set up the **worldbanc** directory from the provided GitHub repository:
 
 ```bash
-# Download the worldbanc directory from GitHub
-curl -L https://github.com/bootdotdev/worldbanc/archive/refs/heads/main.zip -o worldbanc.zip
+# Clone the worldbanc directory from GitHub
+git clone https://github.com/rokib97/learn-shell-terminal.git
 
-# Unzip the downloaded file
-unzip worldbanc.zip
-
-# Remove the zip file to clean up
-rm worldbanc.zip
-
-# Rename the extracted folder to 'worldbanc'
-mv worldbanc-main worldbanc
-
-# Change ownership to the current user
-sudo chown -R $(whoami) worldbanc
-
-# Set proper permissions
-sudo chmod -R 755 worldbanc
+# Navigate to the worldbanc folder
+cd learn-shell-terminal/worldbanc
 ```
 
 ### Step 2: Verify the Setup
@@ -59,14 +47,16 @@ sudo chmod -R 755 worldbanc
    ls
    ```
 
-   You should see `worldbanc` in the output.
+   You should see various files and folders inside the `worldbanc` directory.
 
 2. **Navigate into the worldbanc Directory**  
-   Change into the directory:
+   Ensure you are inside the correct directory:
 
    ```bash
-   cd worldbanc
+   pwd
    ```
+
+   The output should confirm the correct path: `.../learn-shell-terminal/worldbanc`
 
 3. **List Contents of worldbanc**  
    Verify its contents:
@@ -79,12 +69,11 @@ sudo chmod -R 755 worldbanc
 
 ## Troubleshooting
 
-- **curl or unzip not installed?**  
-  Install them using:
+- **git not installed?**  
+  Install it using:
 
   ```bash
-  sudo apt install unzip
-  sudo apt install curl
+  sudo apt install git
   ```
 
 - **Can't paste in the terminal?**  
