@@ -21,6 +21,9 @@ Welcome to the **Learn Shell and Terminal** repository! This resource will help 
 - **🔹 [Chapter 5: Input/Output](./chapters/chapter-5/README.md)**  
    _Overview:_ Learn how to handle standard input, output, and error streams in the shell. Explore concepts like piping, interrupts, and exit codes to manage data flow in Unix-based systems effectively.
 
+- **🔹 [Chapter 6: Packages](./chapters/chapter-6/README.md)**  
+   _Overview:_ Learn and explore various tools and concepts essential for managing and enhancing your development environment. You'll learn about different types of programs, package managers, text editors, and how to optimize your workflow using modern tools.
+
 ---
 
 ## 🚀 How to Use This Repository
