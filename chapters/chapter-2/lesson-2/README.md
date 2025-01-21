@@ -5,7 +5,7 @@
 A **filepath** is a string that describes the location of a file or directory on your computer. An example of a filepath looks like this:
 
 ```
-/Users/wagslane
+/Users/rokib
 ```
 
 ### Breakdown of the Filepath:
@@ -19,7 +19,7 @@ This structure represents a path two levels down from the root directory:
 ```
 root
 └── Users
-    └── wagslane
+    └── rokib
 ```
 
 ---
